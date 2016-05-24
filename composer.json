@@ -1,5 +1,5 @@
 {
-  "name" : "yuzhanwaiting/DbImporter",
+  "name" : "yuzhanwaiting/db-importer",
   "description" : "Providers a db importer from a existing database schema",
   "license" : "Apache License 2.0",
   "require" : {
