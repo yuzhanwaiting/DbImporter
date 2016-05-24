@@ -31,7 +31,7 @@ class DbImporter
 
     public function configToStruct()
     {
-
+        
     }
     
 

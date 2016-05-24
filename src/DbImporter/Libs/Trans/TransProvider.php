@@ -9,8 +9,10 @@ namespace DbImporter\Libs\Trans;
 
 class TransProvider
 {
-    public function __construct()
+    
+    public function __construct($config)
     {
         
     }
+
 }

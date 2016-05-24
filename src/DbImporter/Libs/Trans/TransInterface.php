@@ -9,5 +9,5 @@ namespace DbImporter\Libs\Trans;
 
 interface TransInterface
 {
-    public function loadConfig();
+    public function loadConfig($config);
 }
