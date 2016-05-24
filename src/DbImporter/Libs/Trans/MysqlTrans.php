@@ -14,11 +14,14 @@ class MysqlTrans extends TransProvider
 {
     protected $conn;
 
+    protected $store;
+
     public function __construct($config)
     {
         parent::__construct($config);
-        list($connection,) = $config;
+        list($connection, $store) = $config;
         $this->loadConn($connection);
+        $this->store = $store;
     }
 
     private function loadConn(Connection $connection)
@@ -31,6 +34,7 @@ class MysqlTrans extends TransProvider
     {
 
     }
+
 
     public function export($name)
     {

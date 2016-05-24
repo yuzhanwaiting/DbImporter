@@ -7,12 +7,19 @@
  */
 namespace DbImporter\Libs\Trans;
 
+use Doctrine\Common\Cache\CacheProvider;
+
 class TransProvider
 {
+    protected $store;
     
     public function __construct($config)
     {
         
     }
 
+    public function loadStore(CacheProvider $store)
+    {
+        
+    }
 }
