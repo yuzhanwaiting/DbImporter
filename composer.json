@@ -1,6 +1,6 @@
 {
-  "name" : "yuzhanwaiting/laravel-db-importer",
-  "description" : "Providers a Laravel db importer from a existing database schema",
+  "name" : "yuzhanwaiting/DbImporter",
+  "description" : "Providers a db importer from a existing database schema",
   "license" : "Apache License 2.0",
   "require" : {
     "php" : ">=5.5",
