@@ -1,0 +1,13 @@
+origin:
+  source:
+    - table: users
+
+    - table: admin_users
+      relation: role
+        type: hasOne
+        map:
+          - rid: rid
+
+
+detiny:
+  - table: users

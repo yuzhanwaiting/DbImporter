@@ -1,0 +1,30 @@
+origin:
+    source:
+      table: role
+          map:
+            rid: rid
+            role_name: role_name
+            role_info: role_info
+            status: status
+            sort: sort
+
+
+destiny:
+    database:
+      id:
+        type: increments
+
+      name:
+        type: string
+        length: 20
+
+      info:
+        type: string
+
+    data: role
+      map:
+        rid: id
+        role_name: role_name
+        role_info: role_info
+        status: status
+        sort: sort
