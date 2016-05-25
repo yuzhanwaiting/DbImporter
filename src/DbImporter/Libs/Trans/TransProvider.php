@@ -12,14 +12,20 @@ use Doctrine\Common\Cache\CacheProvider;
 class TransProvider
 {
     protected $store;
+
+    protected $destiny;
+
+    protected $origin;
+
+    protected $struct;
     
     public function __construct($config)
     {
-        
+        list($origin, $destiny, $store) = $config;
+
+        $this->origin = $origin;
+        $this->destiny = $destiny;
+        $this->store = $store;
     }
 
-    public function loadStore(CacheProvider $store)
-    {
-        
-    }
 }

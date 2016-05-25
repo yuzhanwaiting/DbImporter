@@ -24,4 +24,5 @@ $config = require_once (APP_DIR. "config" . DIRECTORY_SEPARATOR . "config.php");
 $dbImporter = new \DbImporter\DbImporter($config);
 
 
-$dbImporter->configToStruct();
+$dbImporter->configToStruct('role');
+$dbImporter->structToData('role');

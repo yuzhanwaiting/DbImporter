@@ -42,8 +42,8 @@ class YamlConfig extends ConfigProvider
         return $this;
     }
 
-    public function show()
+    public function show($name = null)
     {
-        return $this->sources;
+        return $name == null ? $this->sources : $this->sources[$name];
     }
 }

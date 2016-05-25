@@ -1,5 +1,6 @@
 origin:
     source:
+      conn: service
       table:
         name: role
         map:

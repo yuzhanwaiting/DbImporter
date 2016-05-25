@@ -14,27 +14,44 @@ class MysqlTrans extends TransProvider
 {
     protected $conn;
 
-    protected $store;
-
     public function __construct($config)
     {
         parent::__construct($config);
-        list($connection, $store) = $config;
-        $this->loadConn($connection);
-        $this->store = $store;
     }
 
-    private function loadConn(Connection $connection)
-    {
-        $this->conn = $connection;
-    }
+
 
 
     public function resolve($name)
     {
+        $this->struct[$name] = $this->store->fetch($name);
 
+        $source = $this->struct[$name]['origin']['source'];
+
+        $select = $this->resolveMap($source['table']['map']);
+
+        $conn = $this->origin[$source['conn']];
+
+        $queryBuilder = $conn->createQueryBuilder();
+
+
+        $queryBuilder->select($select)->from("yf_" . $source['table']['name']);
+
+        return $conn->fetchAll($queryBuilder->getSQL());
     }
 
+
+
+    private function resolveMap($map)
+    {
+        $des = [];
+
+        foreach($map as $key => $val) {
+            array_push($des, $key. " as ". $val);
+        }
+
+        return $des;
+    }
 
     public function export($name)
     {
